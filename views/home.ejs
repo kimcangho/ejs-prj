@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+
+<h1>Home is where the heart is. He stay.</h1>
+
+<!-- forEach loop -->
+<% postArray.forEach(function(post) { %>
+  <h2> <%= post.title %> </h2>
+  <% if (post.entry.length > 100) { %>
+    <p> <%= post.entry.substring(0,99) + " ..." %> <a href="/posts/<%= post.title %>">Read More!</a></p>
+  <% } else { %>
+    <p> <%= post.entry %> <a href="/posts/<%= post.title %>">Read More!</a></p>
+  <% } %>
+<% }); %>
+
+<%- include("partials/footer") -%>
